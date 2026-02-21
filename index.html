@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ===== META TAGS FOR SEO ===== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WanderWorld - Explore the World's most beautiful destinations. Plan your dream trip to Goa, Mumbai, Kashmir, Kerala, Dubai, Paris, Bali and more.">
+  <meta name="keywords" content="travel, tourism, destinations, Goa, Mumbai, Kashmir, Kerala, Dubai, Paris, Bali, travel guide">
+  <meta name="author" content="WanderWorld">
+  <title>WanderWorld – Explore the World</title>
+
+  <!-- ===== GOOGLE FONT: POPPINS ===== -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- ===== FONT AWESOME ICONS ===== -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- ===== OUR CUSTOM STYLESHEET ===== -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== SCROLL PROGRESS BAR ===== -->
+  <!-- A thin bar at the top that fills as user scrolls down -->
+  <div id="scroll-progress"></div>
+
+  <!-- ===== LOADING SPINNER ===== -->
+  <!-- Shows while the page is loading, then fades out -->
+  <div id="loading-spinner">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- ===== NAVIGATION BAR ===== -->
+  <!-- Sticky navbar that changes style on scroll -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <!-- Logo -->
+      <a href="index.html" class="nav-logo">
+        <i class="fas fa-globe-americas"></i>
+        Wander<span>World</span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="active">Home</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="culture.html">Food &amp; Culture</a>
+        <a href="budget.html">Budget Tips</a>
+        <a href="contact.html">Contact</a>
+        <!-- Dark/Light Mode Toggle Button -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+
+      <!-- Hamburger Menu Button (visible on mobile) -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <!-- Full-screen image slider with overlay text and CTA buttons -->
+  <section class="hero" id="hero">
+    <!-- Background image slides (auto-rotated by JavaScript) -->
+    <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=1920&q=80')"></div>
+    <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1920&q=80')"></div>
+    <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=1920&q=80')"></div>
+    <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1920&q=80')"></div>
+
+    <!-- Dark overlay for text readability -->
+    <div class="hero-overlay"></div>
+
+    <!-- Hero text content -->
+    <div class="hero-content">
+      <h1>Explore the <span>World</span></h1>
+      <p>Discover breathtaking destinations, immerse yourself in diverse cultures, and create unforgettable memories across the globe.</p>
+      <div class="hero-buttons">
+        <a href="destinations.html" class="btn btn-primary">🌍 Browse Cities</a>
+        <a href="budget.html" class="btn btn-secondary">✈️ Plan Your Trip</a>
+      </div>
+    </div>
+
+    <!-- Slide indicator dots -->
+    <div class="hero-dots">
+      <span class="dot active" data-slide="0"></span>
+      <span class="dot" data-slide="1"></span>
+      <span class="dot" data-slide="2"></span>
+      <span class="dot" data-slide="3"></span>
+    </div>
+  </section>
+
+  <!-- ===== FEATURED DESTINATIONS SECTION ===== -->
+  <!-- Shows preview cards for popular destinations -->
+  <section style="padding: 80px 0;" id="featured">
+    <div class="container">
+      <div class="section-title reveal">
+        <h2>Featured Destinations</h2>
+        <p>Handpicked travel gems from around the world to spark your wanderlust</p>
+      </div>
+
+      <div class="destinations-grid">
+        <!-- GOA Card -->
+        <div class="dest-card reveal">
+          <div class="dest-card-image">
+            <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=600&q=80" alt="Beautiful beach in Goa with golden sand and turquoise water">
+          </div>
+          <div class="dest-card-content">
+            <h3>🏖️ Goa, India</h3>
+            <p>Sun-kissed beaches, vibrant nightlife, Portuguese heritage, and delicious seafood — Goa is India's ultimate paradise.</p>
+            <a href="city.html?city=goa" class="btn btn-outline">View Details</a>
+          </div>
+        </div>
+
+        <!-- MUMBAI Card -->
+        <div class="dest-card reveal">
+          <div class="dest-card-image">
+            <img src="https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=600&q=80" alt="Gateway of India monument in Mumbai at sunset">
+          </div>
+          <div class="dest-card-content">
+            <h3>🌆 Mumbai, India</h3>
+            <p>The city of dreams! Experience the Gateway of India, Marine Drive, Bollywood magic, and legendary street food.</p>
+            <a href="city.html?city=mumbai" class="btn btn-outline">View Details</a>
+          </div>
+        </div>
+
+        <!-- KASHMIR Card -->
+        <div class="dest-card reveal">
+          <div class="dest-card-image">
+            <img src="https://images.unsplash.com/photo-1597074866923-dc0589150458?w=600&q=80" alt="Scenic Dal Lake in Kashmir with mountains">
+          </div>
+          <div class="dest-card-content">
+            <h3>🏔️ Kashmir, India</h3>
+            <p>Paradise on Earth — snow-capped peaks, serene Dal Lake, lush gardens, and the warmest hospitality you'll ever find.</p>
+            <a href="city.html?city=kashmir" class="btn btn-outline">View Details</a>
+          </div>
+        </div>
+
+        <!-- KERALA Card -->
+        <div class="dest-card reveal">
+          <div class="dest-card-image">
+            <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=600&q=80" alt="Kerala backwaters with traditional houseboat and palm trees">
+          </div>
+          <div class="dest-card-content">
+            <h3>🌴 Kerala, India</h3>
+            <p>God's Own Country — lush backwaters, Ayurvedic retreats, tea gardens, and breathtaking hill stations await you.</p>
+            <a href="city.html?city=kerala" class="btn btn-outline">View Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY CHOOSE US SECTION ===== -->
+  <section style="padding: 80px 0; background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-title reveal">
+        <h2>Why Travel with WanderWorld?</h2>
+        <p>We make your travel planning effortless and exciting</p>
+      </div>
+      <div class="destinations-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+        <div class="dest-card reveal" style="text-align:center; padding: 30px;">
+          <i class="fas fa-map-marked-alt" style="font-size:2.5rem; color:var(--primary-blue); margin-bottom:16px;"></i>
+          <h3 style="margin-bottom:10px;">Expert Guides</h3>
+          <p>Detailed destination guides curated by local experts and seasoned travelers.</p>
+        </div>
+        <div class="dest-card reveal" style="text-align:center; padding: 30px;">
+          <i class="fas fa-wallet" style="font-size:2.5rem; color:var(--primary-orange); margin-bottom:16px;"></i>
+          <h3 style="margin-bottom:10px;">Budget Friendly</h3>
+          <p>Travel cost breakdowns for every budget — low, medium, or luxury trips.</p>
+        </div>
+        <div class="dest-card reveal" style="text-align:center; padding: 30px;">
+          <i class="fas fa-utensils" style="font-size:2.5rem; color:var(--primary-blue); margin-bottom:16px;"></i>
+          <h3 style="margin-bottom:10px;">Food & Culture</h3>
+          <p>Discover local cuisines, traditions, and festivals from every corner of the world.</p>
+        </div>
+        <div class="dest-card reveal" style="text-align:center; padding: 30px;">
+          <i class="fas fa-shield-alt" style="font-size:2.5rem; color:var(--primary-orange); margin-bottom:16px;"></i>
+          <h3 style="margin-bottom:10px;">Safety First</h3>
+          <p>Travel safety tips and precautions to ensure a worry-free adventure.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS SECTION ===== -->
+  <!-- Traveler reviews displayed as a slider -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-title reveal">
+        <h2>What Travelers Say</h2>
+        <p>Real stories from real adventurers around the world</p>
+      </div>
+
+      <div class="testimonial-slider reveal">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card active">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>"WanderWorld helped me plan the perfect Goa trip. From hidden beaches to local food spots, every detail was covered. Best travel guide ever!"</p>
+          <div class="author">Priya Sharma</div>
+          <div class="role">Solo Traveler, India</div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>"Our family trip to Kashmir was magical thanks to WanderWorld's detailed guide. The budget tips saved us so much money!"</p>
+          <div class="author">Ahmed Khan</div>
+          <div class="role">Family Traveler, UAE</div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>"The culture and food guides for Dubai and Paris were incredibly helpful. I felt like a local everywhere I went!"</p>
+          <div class="author">Emma Wilson</div>
+          <div class="role">Food Blogger, UK</div>
+        </div>
+
+        <!-- Testimonial Navigation Buttons -->
+        <div class="testimonial-nav">
+          <button id="prevTestimonial" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
+          <button id="nextTestimonial" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NEWSLETTER SECTION ===== -->
+  <section style="padding: 80px 0; background: linear-gradient(135deg, var(--primary-blue), #0d47a1); color: white; text-align: center;">
+    <div class="container reveal">
+      <h2 style="font-size: 2rem; margin-bottom: 12px;">🌎 Ready for Your Next Adventure?</h2>
+      <p style="font-size: 1.1rem; opacity: 0.9; margin-bottom: 28px; max-width: 500px; margin-left: auto; margin-right: auto;">Start exploring our handpicked destinations and plan the trip of a lifetime!</p>
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="destinations.html" class="btn btn-secondary">Explore Destinations</a>
+        <a href="contact.html" class="btn btn-outline" style="color: white; border-color: white;">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Column 1: About -->
+        <div class="footer-col">
+          <h4>WanderWorld</h4>
+          <p>Your ultimate travel companion. We help you discover the world's most stunning destinations, plan your budget, and explore diverse cultures.</p>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="culture.html">Food &amp; Culture</a></li>
+            <li><a href="budget.html">Budget Tips</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Popular Destinations -->
+        <div class="footer-col">
+          <h4>Top Destinations</h4>
+          <ul>
+            <li><a href="city.html?city=goa">Goa, India</a></li>
+            <li><a href="city.html?city=kashmir">Kashmir, India</a></li>
+            <li><a href="city.html?city=dubai">Dubai, UAE</a></li>
+            <li><a href="city.html?city=paris">Paris, France</a></li>
+            <li><a href="city.html?city=bali">Bali, Indonesia</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact Info -->
+        <div class="footer-col">
+          <h4>Contact Info</h4>
+          <ul>
+            <li><i class="fas fa-envelope" style="margin-right:8px; color:var(--primary-orange);"></i> hello@wanderworld.com</li>
+            <li><i class="fas fa-phone" style="margin-right:8px; color:var(--primary-orange);"></i> +91 98765 43210</li>
+            <li><i class="fas fa-map-marker-alt" style="margin-right:8px; color:var(--primary-orange);"></i> Mumbai, India</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 WanderWorld. All Rights Reserved. | Made with ❤️ for travelers</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== BACK TO TOP BUTTON ===== -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- ===== CHATBOT POPUP ===== -->
+  <!-- Floating chat button and chat window -->
+  <button class="chatbot-btn" id="chatbotBtn" aria-label="Open chatbot">
+    <i class="fas fa-comment-dots"></i>
+  </button>
+
+  <div class="chatbot-window" id="chatbotWindow">
+    <div class="chatbot-header">
+      <span>🤖 WanderBot</span>
+      <button class="close-chat" id="closeChat" aria-label="Close chat"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="chatbot-messages" id="chatMessages">
+      <div class="chat-msg bot">Hi there! 👋 I'm WanderBot. Ask me about any destination, budget tips, or travel advice!</div>
+    </div>
+    <div class="chatbot-input">
+      <input type="text" id="chatInput" placeholder="Type a message..." aria-label="Chat message">
+      <button id="chatSend" aria-label="Send message"><i class="fas fa-paper-plane"></i></button>
+    </div>
+  </div>
+
+  <!-- ===== IMAGE LIGHTBOX ===== -->
+  <!-- Full-screen image viewer popup -->
+  <div class="lightbox" id="lightbox">
+    <button class="close-lightbox" id="closeLightbox" aria-label="Close lightbox"><i class="fas fa-times"></i></button>
+    <img src="" alt="Lightbox image" id="lightboxImg">
+  </div>
+
+  <!-- ===== JAVASCRIPT FILE ===== -->
+  <script src="script.js"></script>
+</body>
+</html>

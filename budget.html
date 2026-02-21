@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Travel budget tips, cost comparison, packing checklist, currency converter, and safety tips for world travel.">
+    <title>Budget &amp; Travel Tips – WanderWorld</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="scroll-progress"></div>
+    <div id="loading-spinner">
+        <div class="spinner"></div>
+    </div>
+
+    <nav class="navbar scrolled" id="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo" style="color:var(--primary-blue);"><i
+                    class="fas fa-globe-americas"></i> Wander<span>World</span></a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a><a href="destinations.html">Destinations</a><a href="culture.html">Food
+                    &amp; Culture</a>
+                <a href="budget.html" class="active">Budget Tips</a><a href="contact.html">Contact</a>
+                <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+            </div>
+            <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <section class="page-hero"
+        style="background-image: url('https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=1920&q=80');">
+        <div class="hero-overlay"></div>
+        <div class="page-hero-content">
+            <h1>💰 Budget &amp; Travel Tips</h1>
+            <p>Smart travel planning for every budget</p>
+        </div>
+    </section>
+
+    <!-- Cost Comparison Table -->
+    <section style="padding:80px 0;">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>📊 Travel Cost Comparison</h2>
+                <p>Estimated daily costs per person (in USD)</p>
+            </div>
+            <div style="overflow-x:auto;" class="reveal">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Destination</th>
+                            <th>Budget ($/day)</th>
+                            <th>Mid-Range</th>
+                            <th>Luxury</th>
+                            <th>Flight (Avg)</th>
+                            <th>Best Season</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>🏖️ Goa</td>
+                            <td>$20–30</td>
+                            <td>$50–80</td>
+                            <td>$150+</td>
+                            <td>$50–100</td>
+                            <td>Oct–Mar</td>
+                        </tr>
+                        <tr>
+                            <td>🌆 Mumbai</td>
+                            <td>$25–35</td>
+                            <td>$60–100</td>
+                            <td>$200+</td>
+                            <td>$40–80</td>
+                            <td>Nov–Feb</td>
+                        </tr>
+                        <tr>
+                            <td>🏔️ Kashmir</td>
+                            <td>$20–30</td>
+                            <td>$50–90</td>
+                            <td>$180+</td>
+                            <td>$60–120</td>
+                            <td>Mar–Oct</td>
+                        </tr>
+                        <tr>
+                            <td>⛰️ Himachal</td>
+                            <td>$15–25</td>
+                            <td>$40–70</td>
+                            <td>$150+</td>
+                            <td>$50–100</td>
+                            <td>Mar–Jun</td>
+                        </tr>
+                        <tr>
+                            <td>🏔️ Manali</td>
+                            <td>$15–25</td>
+                            <td>$40–80</td>
+                            <td>$160+</td>
+                            <td>$60–110</td>
+                            <td>Oct–Jun</td>
+                        </tr>
+                        <tr>
+                            <td>🌴 Kerala</td>
+                            <td>$20–30</td>
+                            <td>$50–90</td>
+                            <td>$200+</td>
+                            <td>$50–100</td>
+                            <td>Sep–Mar</td>
+                        </tr>
+                        <tr>
+                            <td>🏙️ Dubai</td>
+                            <td>$60–90</td>
+                            <td>$150–250</td>
+                            <td>$500+</td>
+                            <td>$200–400</td>
+                            <td>Nov–Mar</td>
+                        </tr>
+                        <tr>
+                            <td>🗼 Paris</td>
+                            <td>$70–100</td>
+                            <td>$150–250</td>
+                            <td>$500+</td>
+                            <td>$300–600</td>
+                            <td>Apr–Oct</td>
+                        </tr>
+                        <tr>
+                            <td>🌺 Bali</td>
+                            <td>$25–40</td>
+                            <td>$60–100</td>
+                            <td>$250+</td>
+                            <td>$150–350</td>
+                            <td>Apr–Oct</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packing Checklist -->
+    <section style="padding:80px 0; background:var(--bg-secondary);">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>🎒 Packing Checklist</h2>
+                <p>Check items as you pack — saves automatically!</p>
+            </div>
+            <div class="checklist reveal" id="packingChecklist">
+                <!-- Items injected by JS with localStorage persistence -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Currency Converter -->
+    <section style="padding:80px 0;">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>💱 Currency Converter</h2>
+                <p>Quick conversion for your travel budget</p>
+            </div>
+            <div class="converter-card reveal">
+                <div class="converter-form">
+                    <label for="convertAmount">Amount</label>
+                    <input type="number" id="convertAmount" value="1000" min="0">
+                    <label for="fromCurrency">From</label>
+                    <select id="fromCurrency">
+                        <option value="INR">🇮🇳 INR - Indian Rupee</option>
+                        <option value="USD" selected>🇺🇸 USD - US Dollar</option>
+                        <option value="EUR">🇪🇺 EUR - Euro</option>
+                        <option value="GBP">🇬🇧 GBP - British Pound</option>
+                        <option value="AED">🇦🇪 AED - UAE Dirham</option>
+                        <option value="IDR">🇮🇩 IDR - Indonesian Rupiah</option>
+                    </select>
+                    <label for="toCurrency">To</label>
+                    <select id="toCurrency">
+                        <option value="INR" selected>🇮🇳 INR - Indian Rupee</option>
+                        <option value="USD">🇺🇸 USD - US Dollar</option>
+                        <option value="EUR">🇪🇺 EUR - Euro</option>
+                        <option value="GBP">🇬🇧 GBP - British Pound</option>
+                        <option value="AED">🇦🇪 AED - UAE Dirham</option>
+                        <option value="IDR">🇮🇩 IDR - Indonesian Rupiah</option>
+                    </select>
+                    <button class="btn btn-primary" id="convertBtn" style="margin-top:8px;">Convert</button>
+                    <div class="converter-result" id="converterResult">≈ ₹83,000.00</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety Tips -->
+    <section style="padding:80px 0; background:var(--bg-secondary);">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>🛡️ Safety Tips</h2>
+                <p>Stay safe on your travels</p>
+            </div>
+            <div class="safety-grid reveal">
+                <div class="safety-card"><i class="fas fa-id-card"></i>
+                    <h4>Keep Copies of Documents</h4>
+                    <p>Store digital copies of passport, visa, and ID in your email and cloud. Carry a physical
+                        photocopy separately from originals.</p>
+                </div>
+                <div class="safety-card"><i class="fas fa-first-aid"></i>
+                    <h4>Travel Insurance</h4>
+                    <p>Always buy travel insurance covering medical emergencies, trip cancellation, and lost luggage.
+                        It's worth every penny.</p>
+                </div>
+                <div class="safety-card"><i class="fas fa-map-pin"></i>
+                    <h4>Share Your Itinerary</h4>
+                    <p>Share your travel plans and hotel details with a trusted friend or family member. Check in
+                        regularly.</p>
+                </div>
+                <div class="safety-card"><i class="fas fa-lock"></i>
+                    <h4>Secure Your Valuables</h4>
+                    <p>Use hotel safes, money belts, and anti-theft bags. Avoid flashing expensive jewelry or gadgets in
+                        crowded areas.</p>
+                </div>
+                <div class="safety-card"><i class="fas fa-tint"></i>
+                    <h4>Stay Hydrated</h4>
+                    <p>Carry a reusable water bottle and stick to bottled or filtered water in unfamiliar destinations.
+                        Avoid ice in drinks.</p>
+                </div>
+                <div class="safety-card"><i class="fas fa-phone-alt"></i>
+                    <h4>Emergency Numbers</h4>
+                    <p>Save local emergency numbers, embassy contacts, and your hotel address. Download offline maps
+                        before you leave.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Travel Seasons -->
+    <section style="padding:80px 0;">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>🌤️ Best Travel Seasons</h2>
+                <p>Plan your trip at the perfect time</p>
+            </div>
+            <div class="seasons-grid reveal">
+                <div class="season-card"><i class="fas fa-snowflake" style="color:#64b5f6;"></i>
+                    <h4>Winter (Dec–Feb)</h4>
+                    <p>Best for: Goa, Kerala, Dubai, Mumbai. Pleasant weather, festivals, and peak tourist season.</p>
+                </div>
+                <div class="season-card"><i class="fas fa-leaf" style="color:#66bb6a;"></i>
+                    <h4>Spring (Mar–May)</h4>
+                    <p>Best for: Kashmir, Himachal, Paris, Bali. Blooming flowers, moderate temperatures, fewer crowds.
+                    </p>
+                </div>
+                <div class="season-card"><i class="fas fa-sun" style="color:#ffa726;"></i>
+                    <h4>Summer (Jun–Aug)</h4>
+                    <p>Best for: Manali, Kashmir, Paris, Bali. Mountain escapes and European summer vibes.</p>
+                </div>
+                <div class="season-card"><i class="fas fa-cloud-rain" style="color:#78909c;"></i>
+                    <h4>Monsoon (Jul–Sep)</h4>
+                    <p>Best for: Kerala (off-season deals), Goa (lush green). Budget-friendly with dramatic landscapes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>WanderWorld</h4>
+                    <p>Your ultimate travel companion.</p>
+                    <div class="social-icons"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i
+                                class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a
+                            href="#"><i class="fab fa-youtube"></i></a></div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="culture.html">Food &amp; Culture</a></li>
+                        <li><a href="budget.html">Budget Tips</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Top Destinations</h4>
+                    <ul>
+                        <li><a href="city.html?city=goa">Goa</a></li>
+                        <li><a href="city.html?city=kashmir">Kashmir</a></li>
+                        <li><a href="city.html?city=dubai">Dubai</a></li>
+                        <li><a href="city.html?city=paris">Paris</a></li>
+                        <li><a href="city.html?city=bali">Bali</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope" style="margin-right:8px;color:var(--primary-orange);"></i>
+                            hello@wanderworld.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 WanderWorld. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></button>
+    <button class="chatbot-btn" id="chatbotBtn"><i class="fas fa-comment-dots"></i></button>
+    <div class="chatbot-window" id="chatbotWindow">
+        <div class="chatbot-header"><span>🤖 WanderBot</span><button class="close-chat" id="closeChat"><i
+                    class="fas fa-times"></i></button></div>
+        <div class="chatbot-messages" id="chatMessages">
+            <div class="chat-msg bot">Hi! 👋 Need budget tips?</div>
+        </div>
+        <div class="chatbot-input"><input type="text" id="chatInput" placeholder="Type a message..."><button
+                id="chatSend"><i class="fas fa-paper-plane"></i></button></div>
+    </div>
+    <div class="lightbox" id="lightbox"><button class="close-lightbox" id="closeLightbox"><i
+                class="fas fa-times"></i></button><img src="" alt="Lightbox" id="lightboxImg"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ===== META TAGS ===== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Explore city details — top places, famous food, culture, budget tips, weather, and travel advice for your dream destination.">
+    <title>City Details – WanderWorld</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="scroll-progress"></div>
+    <div id="loading-spinner">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo" style="color:var(--primary-blue);">
+                <i class="fas fa-globe-americas"></i>
+                Wander<span>World</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="destinations.html" class="active">Destinations</a>
+                <a href="culture.html">Food &amp; Culture</a>
+                <a href="budget.html">Budget Tips</a>
+                <a href="contact.html">Contact</a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><i
+                        class="fas fa-moon"></i></button>
+            </div>
+            <button class="hamburger" id="hamburger"
+                aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <!-- ===== CITY HERO BANNER ===== -->
+    <!-- This image and text will be dynamically set by JavaScript based on URL parameter -->
+    <section class="page-hero" id="cityHero"
+        style="background-image: url('https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=1920&q=80');">
+        <div class="hero-overlay"></div>
+        <div class="page-hero-content">
+            <h1 id="cityName">Loading...</h1>
+            <p id="cityTagline">Discovering the best this destination has to offer</p>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT THE CITY ===== -->
+    <section class="about-city">
+        <div class="container">
+            <div class="about-city-content reveal">
+                <img id="cityAboutImg" src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&q=80"
+                    alt="City landscape">
+                <div class="about-city-text">
+                    <h2>About <span id="aboutCityName">the City</span></h2>
+                    <p id="cityDescription">Loading city description...</p>
+                    <p id="cityDescription2"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TOP PLACES TO VISIT ===== -->
+    <section style="padding: 80px 0; background: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>🏛️ Top Places to Visit</h2>
+                <p>Must-see attractions and hidden gems</p>
+            </div>
+            <div class="places-grid" id="placesGrid">
+                <!-- Places will be injected by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAMOUS FOOD ===== -->
+    <section style="padding: 80px 0;">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>🍽️ Famous Food</h2>
+                <p>Taste the authentic flavors of this destination</p>
+            </div>
+            <div class="food-grid" id="foodGrid">
+                <!-- Food cards injected by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CULTURE & FESTIVALS ===== -->
+    <section style="padding: 80px 0; background: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>🎭 Culture &amp; Festivals</h2>
+                <p>Immerse yourself in local traditions and celebrations</p>
+            </div>
+            <div id="cultureSection">
+                <!-- Culture blocks injected by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TRAVEL BUDGET ===== -->
+    <section style="padding: 80px 0;">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>💰 Travel Budget</h2>
+                <p>Plan your trip according to your budget</p>
+            </div>
+            <div class="budget-cards" id="budgetCards">
+                <!-- Budget cards injected by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TRAVEL TIPS ===== -->
+    <section style="padding: 80px 0; background: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>💡 Travel Tips</h2>
+                <p>Pro advice to make the most of your trip</p>
+            </div>
+            <ul class="tips-list" id="tipsList">
+                <!-- Tips injected by JavaScript -->
+            </ul>
+        </div>
+    </section>
+
+    <!-- ===== IMAGE GALLERY ===== -->
+    <section style="padding: 80px 0;">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>📸 Photo Gallery</h2>
+                <p>Visual inspiration for your journey</p>
+            </div>
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Gallery images injected by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WEATHER INFO ===== -->
+    <section style="padding: 80px 0; background: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>🌤️ Weather Info</h2>
+                <p>Best time to visit and climate details</p>
+            </div>
+            <div class="weather-card reveal" id="weatherCard">
+                <i class="fas fa-sun"></i>
+                <div class="temp" id="weatherTemp">28°C</div>
+                <p id="weatherDesc">Pleasant & Sunny</p>
+                <p style="margin-top:12px; font-size:0.9rem; opacity:0.8;" id="weatherBest">Best time: October – March
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>WanderWorld</h4>
+                    <p>Your ultimate travel companion for exploring the world's most beautiful destinations.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="culture.html">Food &amp; Culture</a></li>
+                        <li><a href="budget.html">Budget Tips</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Top Destinations</h4>
+                    <ul>
+                        <li><a href="city.html?city=goa">Goa</a></li>
+                        <li><a href="city.html?city=kashmir">Kashmir</a></li>
+                        <li><a href="city.html?city=dubai">Dubai</a></li>
+                        <li><a href="city.html?city=paris">Paris</a></li>
+                        <li><a href="city.html?city=bali">Bali</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope" style="margin-right:8px; color:var(--primary-orange);"></i>
+                            hello@wanderworld.com</li>
+                        <li><i class="fas fa-phone" style="margin-right:8px; color:var(--primary-orange);"></i> +91
+                            98765 43210</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 WanderWorld. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+    <button class="chatbot-btn" id="chatbotBtn" aria-label="Open chatbot"><i class="fas fa-comment-dots"></i></button>
+    <div class="chatbot-window" id="chatbotWindow">
+        <div class="chatbot-header">
+            <span>🤖 WanderBot</span>
+            <button class="close-chat" id="closeChat"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="chatbot-messages" id="chatMessages">
+            <div class="chat-msg bot">Hi! 👋 Ask me about this destination!</div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatInput" placeholder="Type a message...">
+            <button id="chatSend"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <div class="lightbox" id="lightbox">
+        <button class="close-lightbox" id="closeLightbox"><i class="fas fa-times"></i></button>
+        <img src="" alt="Lightbox image" id="lightboxImg">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

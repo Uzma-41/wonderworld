@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact WanderWorld — send us a message, view FAQs, and find us on the map.">
+    <title>Contact Us – WanderWorld</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="scroll-progress"></div>
+    <div id="loading-spinner">
+        <div class="spinner"></div>
+    </div>
+
+    <nav class="navbar scrolled" id="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo" style="color:var(--primary-blue);"><i
+                    class="fas fa-globe-americas"></i> Wander<span>World</span></a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a><a href="destinations.html">Destinations</a><a href="culture.html">Food
+                    &amp; Culture</a>
+                <a href="budget.html">Budget Tips</a><a href="contact.html" class="active">Contact</a>
+                <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+            </div>
+            <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <section class="page-hero"
+        style="background-image: url('https://images.unsplash.com/photo-1521295121783-8a321d551ad2?w=1920&q=80');">
+        <div class="hero-overlay"></div>
+        <div class="page-hero-content">
+            <h1>📬 Contact Us</h1>
+            <p>We'd love to hear from you!</p>
+        </div>
+    </section>
+
+    <!-- Contact Form + Info -->
+    <section style="padding:80px 0;">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form reveal">
+                    <h3>Send us a Message</h3>
+                    <form id="contactForm" novalidate>
+                        <div class="form-group" id="nameGroup">
+                            <label for="contactName">Full Name *</label>
+                            <input type="text" id="contactName" placeholder="Enter your name" required>
+                            <div class="error-msg">Please enter your name</div>
+                        </div>
+                        <div class="form-group" id="emailGroup">
+                            <label for="contactEmail">Email Address *</label>
+                            <input type="email" id="contactEmail" placeholder="Enter your email" required>
+                            <div class="error-msg">Please enter a valid email</div>
+                        </div>
+                        <div class="form-group" id="phoneGroup">
+                            <label for="contactPhone">Phone Number</label>
+                            <input type="tel" id="contactPhone" placeholder="Enter your phone number">
+                            <div class="error-msg">Please enter a valid phone number</div>
+                        </div>
+                        <div class="form-group" id="destGroup">
+                            <label for="contactDest">Destination Interest</label>
+                            <select id="contactDest">
+                                <option value="">Select a destination</option>
+                                <option value="Goa">Goa</option>
+                                <option value="Mumbai">Mumbai</option>
+                                <option value="Kashmir">Kashmir</option>
+                                <option value="Himachal">Himachal Pradesh</option>
+                                <option value="Manali">Manali</option>
+                                <option value="Kerala">Kerala</option>
+                                <option value="Dubai">Dubai</option>
+                                <option value="Paris">Paris</option>
+                                <option value="Bali">Bali</option>
+                            </select>
+                        </div>
+                        <div class="form-group" id="messageGroup">
+                            <label for="contactMessage">Message *</label>
+                            <textarea id="contactMessage" placeholder="Tell us about your travel plans..."
+                                required></textarea>
+                            <div class="error-msg">Please enter your message</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width:100%;">Send Message ✉️</button>
+                    </form>
+
+                    <!-- Stored Submissions Viewer -->
+                    <div style="margin-top:30px;">
+                        <h3 style="margin-bottom:16px;">📋 Submitted Messages <small
+                                style="color:var(--text-secondary);">(Stored in LocalStorage)</small></h3>
+                        <div id="submissionsList" style="max-height:300px; overflow-y:auto;"></div>
+                    </div>
+                </div>
+
+                <!-- Contact Info & FAQ -->
+                <div>
+                    <div class="dest-card reveal" style="padding:30px; margin-bottom:24px;">
+                        <h3 style="margin-bottom:20px;">📍 Get in Touch</h3>
+                        <p style="margin-bottom:14px;"><i class="fas fa-envelope"
+                                style="color:var(--primary-orange);margin-right:10px;"></i> hello@wanderworld.com</p>
+                        <p style="margin-bottom:14px;"><i class="fas fa-phone"
+                                style="color:var(--primary-orange);margin-right:10px;"></i> +91 98765 43210</p>
+                        <p style="margin-bottom:14px;"><i class="fas fa-map-marker-alt"
+                                style="color:var(--primary-orange);margin-right:10px;"></i> Mumbai, Maharashtra, India
+                        </p>
+                        <p><i class="fas fa-clock" style="color:var(--primary-orange);margin-right:10px;"></i> Mon–Sat,
+                            9AM – 7PM IST</p>
+                    </div>
+
+                    <!-- FAQ Accordion -->
+                    <div class="faq-section reveal">
+                        <h3 style="margin-bottom:20px;">❓ Frequently Asked Questions</h3>
+                        <div class="faq-item"><button class="faq-question">Is WanderWorld free to use? <i
+                                    class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer">
+                                <p>Yes! WanderWorld is a completely free travel guide platform. We provide destination
+                                    info, budget tips, and cultural guides at no cost.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item"><button class="faq-question">Do you offer booking services? <i
+                                    class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer">
+                                <p>Currently, we provide travel information and planning tools. For bookings, we
+                                    recommend trusted partners like MakeMyTrip, Booking.com, and Airbnb.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item"><button class="faq-question">How accurate are the budget estimates? <i
+                                    class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer">
+                                <p>Our budget estimates are based on average costs and updated regularly. Actual costs
+                                    may vary based on season, accommodation choices, and travel style.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item"><button class="faq-question">Can I contribute travel content? <i
+                                    class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer">
+                                <p>Absolutely! We love community contributions. Send us your travel stories, photos, and
+                                    tips through the contact form and we may feature them on the site.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item"><button class="faq-question">Is my contact data safe? <i
+                                    class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer">
+                                <p>Your data is stored locally in your browser's LocalStorage as a mini database. It
+                                    never leaves your device. For a production site, server-side databases would be
+                                    used.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map -->
+            <div class="map-container reveal">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.11609823277!2d72.74109995709657!3d19.08219783958221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C+Maharashtra!5e0!3m2!1sen!2sin!4v1"
+                    allowfullscreen loading="lazy" title="Map of Mumbai"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Popup -->
+    <div class="popup-overlay" id="popupOverlay"></div>
+    <div class="success-popup" id="successPopup">
+        <i class="fas fa-check-circle"></i>
+        <h3>Message Sent!</h3>
+        <p>Your message has been saved to our database. We'll get back to you soon!</p>
+        <button class="btn btn-primary" id="closePopup">OK, Great!</button>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>WanderWorld</h4>
+                    <p>Your ultimate travel companion.</p>
+                    <div class="social-icons"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i
+                                class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a
+                            href="#"><i class="fab fa-youtube"></i></a></div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="culture.html">Food &amp; Culture</a></li>
+                        <li><a href="budget.html">Budget Tips</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Top Destinations</h4>
+                    <ul>
+                        <li><a href="city.html?city=goa">Goa</a></li>
+                        <li><a href="city.html?city=kashmir">Kashmir</a></li>
+                        <li><a href="city.html?city=dubai">Dubai</a></li>
+                        <li><a href="city.html?city=paris">Paris</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope" style="margin-right:8px;color:var(--primary-orange);"></i>
+                            hello@wanderworld.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 WanderWorld. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></button>
+    <button class="chatbot-btn" id="chatbotBtn"><i class="fas fa-comment-dots"></i></button>
+    <div class="chatbot-window" id="chatbotWindow">
+        <div class="chatbot-header"><span>🤖 WanderBot</span><button class="close-chat" id="closeChat"><i
+                    class="fas fa-times"></i></button></div>
+        <div class="chatbot-messages" id="chatMessages">
+            <div class="chat-msg bot">Hi! 👋 Have questions? Ask me!</div>
+        </div>
+        <div class="chatbot-input"><input type="text" id="chatInput" placeholder="Type a message..."><button
+                id="chatSend"><i class="fas fa-paper-plane"></i></button></div>
+    </div>
+    <div class="lightbox" id="lightbox"><button class="close-lightbox" id="closeLightbox"><i
+                class="fas fa-times"></i></button><img src="" alt="Lightbox" id="lightboxImg"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

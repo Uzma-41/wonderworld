@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Explore traditional foods, culture, festivals from Goa, Mumbai, Kashmir, Kerala, Dubai, Paris, Bali and more.">
+    <title>Food &amp; Culture – WanderWorld</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="scroll-progress"></div>
+    <div id="loading-spinner">
+        <div class="spinner"></div>
+    </div>
+
+    <nav class="navbar scrolled" id="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo" style="color:var(--primary-blue);"><i
+                    class="fas fa-globe-americas"></i> Wander<span>World</span></a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="destinations.html">Destinations</a>
+                <a href="culture.html" class="active">Food &amp; Culture</a>
+                <a href="budget.html">Budget Tips</a>
+                <a href="contact.html">Contact</a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><i
+                        class="fas fa-moon"></i></button>
+            </div>
+            <button class="hamburger" id="hamburger"
+                aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <section class="page-hero"
+        style="background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&q=80');">
+        <div class="hero-overlay"></div>
+        <div class="page-hero-content">
+            <h1>🍛 Food &amp; Culture</h1>
+            <p>Savor the flavors and celebrate traditions from around the world</p>
+        </div>
+    </section>
+
+    <!-- Destination-specific food & culture content rendered by JS -->
+    <section style="padding: 80px 0;">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Select a Destination</h2>
+                <p>Explore food and cultural heritage</p>
+            </div>
+            <div class="destination-tabs reveal" id="cultureTabs"></div>
+            <div id="cultureContent"></div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section style="padding: 80px 0; background: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>🎬 Travel Inspiration</h2>
+                <p>Watch and get inspired for your next adventure</p>
+            </div>
+            <div class="video-embed reveal">
+                <iframe src="https://www.youtube.com/embed/lRkHbRcmODg" title="Travel the World video" allowfullscreen
+                    loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>WanderWorld</h4>
+                    <p>Your ultimate travel companion.</p>
+                    <div class="social-icons"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i
+                                class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a
+                            href="#"><i class="fab fa-youtube"></i></a></div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="culture.html">Food &amp; Culture</a></li>
+                        <li><a href="budget.html">Budget Tips</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Top Destinations</h4>
+                    <ul>
+                        <li><a href="city.html?city=goa">Goa</a></li>
+                        <li><a href="city.html?city=kashmir">Kashmir</a></li>
+                        <li><a href="city.html?city=dubai">Dubai</a></li>
+                        <li><a href="city.html?city=paris">Paris</a></li>
+                        <li><a href="city.html?city=bali">Bali</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope" style="margin-right:8px;color:var(--primary-orange);"></i>
+                            hello@wanderworld.com</li>
+                        <li><i class="fas fa-phone" style="margin-right:8px;color:var(--primary-orange);"></i> +91 98765
+                            43210</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 WanderWorld. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></button>
+    <button class="chatbot-btn" id="chatbotBtn"><i class="fas fa-comment-dots"></i></button>
+    <div class="chatbot-window" id="chatbotWindow">
+        <div class="chatbot-header"><span>🤖 WanderBot</span><button class="close-chat" id="closeChat"><i
+                    class="fas fa-times"></i></button></div>
+        <div class="chatbot-messages" id="chatMessages">
+            <div class="chat-msg bot">Hi! 👋 Ask me about food or culture!</div>
+        </div>
+        <div class="chatbot-input"><input type="text" id="chatInput" placeholder="Type a message..."><button
+                id="chatSend"><i class="fas fa-paper-plane"></i></button></div>
+    </div>
+    <div class="lightbox" id="lightbox"><button class="close-lightbox" id="closeLightbox"><i
+                class="fas fa-times"></i></button><img src="" alt="Lightbox" id="lightboxImg"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

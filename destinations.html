@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ===== META TAGS ===== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Explore top travel destinations around the world — Goa, Mumbai, Kashmir, Kerala, Dubai, Paris, Bali, Himachal and Manali.">
+    <title>Destinations – WanderWorld</title>
+
+    <!-- ===== FONTS & ICONS ===== -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Scroll Progress -->
+    <div id="scroll-progress"></div>
+
+    <!-- Loading Spinner -->
+    <div id="loading-spinner">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- ===== NAVIGATION BAR ===== -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo" style="color:var(--primary-blue);">
+                <i class="fas fa-globe-americas"></i>
+                Wander<span>World</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="destinations.html" class="active">Destinations</a>
+                <a href="culture.html">Food &amp; Culture</a>
+                <a href="budget.html">Budget Tips</a>
+                <a href="contact.html">Contact</a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===== PAGE HERO BANNER ===== -->
+    <section class="page-hero"
+        style="background-image: url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1920&q=80');">
+        <div class="hero-overlay"></div>
+        <div class="page-hero-content">
+            <h1>🌍 Explore Destinations</h1>
+            <p>Find your next dream getaway from our curated collection</p>
+        </div>
+    </section>
+
+    <!-- ===== DESTINATIONS GRID SECTION ===== -->
+    <section style="padding: 80px 0;">
+        <div class="container">
+
+            <!-- Search Bar & Filter Buttons -->
+            <div class="search-filter-bar reveal">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search destinations..."
+                        aria-label="Search destinations">
+                </div>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="india">India</button>
+                    <button class="filter-btn" data-filter="asia">Asia</button>
+                    <button class="filter-btn" data-filter="europe">Europe</button>
+                    <button class="filter-btn" data-filter="middle-east">Middle East</button>
+                </div>
+            </div>
+
+            <!-- Destination Cards Grid -->
+            <!-- Each card has data-category for filtering and data-name for search -->
+            <div class="destinations-grid" id="destinationsGrid">
+
+                <!-- GOA -->
+                <div class="dest-card reveal" data-category="india" data-name="goa">
+                    <div class="dest-card-image">
+                        <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=600&q=80"
+                            alt="Goa beach with golden sand and blue water">
+                    </div>
+                    <div class="dest-card-content">
+                        <h3>🏖️ Goa</h3>
+                        <p>Sun-soaked beaches, Portuguese churches, vibrant nightlife, and mouthwatering seafood on
+                            India's western coast.</p>
+                        <a href="city.html?city=goa" class="btn btn-outline">View Details</a>
+                    </div>
+                </div>
+
+                <!-- MUMBAI -->
+                <div class="dest-card reveal" data-category="india" data-name="mumbai">
+                    <div class="dest-card-image">
+                        <img src="https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=600&q=80"
+                            alt="Gateway of India in Mumbai">
+                    </div>
+                    <div class="dest-card-content">
+                        <h3>🌆 Mumbai</h3>
+                        <p>City of dreams — Gateway of India, Marine Drive, Bollywood, street food, and non-stop energy.
+                        </p>
+                        <a href="city.html?city=mumbai" class="btn btn-outline">View Details</a>
+                    </div>
+                </div>
+
+                <!-- KASHMIR -->
+                <div class="dest-card reveal" data-category="india" data-name="kashmir">
+                    <div class="dest-card-image">
+                        <img src="https://images.unsplash.com/photo-1597074866923-dc0589150458?w=600&q=80"
+                            alt="Dal Lake in Kashmir with mountains">
+                    </div>
+                    <div class="dest-card-content">
+                        <h3>🏔️ Kashmir</h3>
+                        <p>Paradise on Earth — Dal Lake, Mughal Gardens, snow-capped mountains, and warm Kashmiri
+                            hospitality.</p>
+                        <a href="city.html?city=kashmir" class="btn btn-outline">View Details</a>
+                    </div>
+                </div>
+
+                <!-- HIMACHAL PRADESH -->
+                <div class="dest-card reveal" data-category="india" data-name="himachal">
+                    <div class="dest-card-image">
+                        <img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=600&q=80"
+                            alt="Himachal Pradesh mountain valley">
+                    </div>
+                    <div class="dest-card-content">
+                        <h3>⛰️ Himachal Pradesh</h3>
+                        <p>Majestic Himalayan landscapes, ancient temples, adventure treks, and serene hill stations.
+                        </p>
+                        <a href="city.html?city=himachal" class="btn btn-outline">View Details</a>
+                    </div>
+                </div>
+
+                <!-- MANALI -->
+                <div class="dest-card reveal" data-category="india" data-name="manali">
+                    <div class="dest-card-image">
+                        <img src="https://images.unsplash.com/photo-1593181629936-11c609b8db9b?w=600&q=80"
+                            alt="Manali snow-capped mountains">
+                    </div>
+                    <div class="dest-card-content">
+                        <h3>🏔️ Manali</h3>
+                        <p>Snow adventures, Solang Valley, Rohtang Pass, riverside camping, and cozy mountain vibes.</p>
+                        <a href="city.html?city=manali" class="btn btn-outline">View Details</a>
+                    </div>
+                </div>
+
+                <!-- KERALA -->
+                <div class="dest-card reveal" data-category="india" data-name="kerala">
+                    <div class="dest-card-image">
+                        <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=600&q=80"
+                            alt="Kerala backwaters with houseboat">
+                    </div>
+                    <div class="dest-card-content">
+                        <h3>🌴 Kerala</h3>
+                        <p>God's Own Country — tranquil backwaters, Ayurveda, spice plantations, and Kathakali dance.
+                        </p>
+                        <a href="city.html?city=kerala" class="btn btn-outline">View Details</a>
+                    </div>
+                </div>
+
+                <!-- DUBAI -->
+                <div class="dest-card reveal" data-category="middle-east" data-name="dubai">
+                    <div class="dest-card-image">
+                        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80"
+                            alt="Dubai skyline with Burj Khalifa">
+                    </div>
+                    <div class="dest-card-content">
+                        <h3>🏙️ Dubai</h3>
+                        <p>Futuristic skyline, luxury shopping, desert safaris, and the world's tallest building — Burj
+                            Khalifa.</p>
+                        <a href="city.html?city=dubai" class="btn btn-outline">View Details</a>
+                    </div>
+                </div>
+
+                <!-- PARIS -->
+                <div class="dest-card reveal" data-category="europe" data-name="paris">
+                    <div class="dest-card-image">
+                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600&q=80"
+                            alt="Eiffel Tower in Paris at sunset">
+                    </div>
+                    <div class="dest-card-content">
+                        <h3>🗼 Paris</h3>
+                        <p>City of Love — Eiffel Tower, Louvre Museum, Seine River cruises, croissants, and romantic
+                            charm.</p>
+                        <a href="city.html?city=paris" class="btn btn-outline">View Details</a>
+                    </div>
+                </div>
+
+                <!-- BALI -->
+                <div class="dest-card reveal" data-category="asia" data-name="bali">
+                    <div class="dest-card-image">
+                        <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80"
+                            alt="Bali rice terraces with lush greenery">
+                    </div>
+                    <div class="dest-card-content">
+                        <h3>🌺 Bali</h3>
+                        <p>Tropical paradise — stunning rice terraces, ancient temples, surfing, and vibrant Balinese
+                            culture.</p>
+                        <a href="city.html?city=bali" class="btn btn-outline">View Details</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>WanderWorld</h4>
+                    <p>Your ultimate travel companion for exploring the world's most beautiful destinations.</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="culture.html">Food &amp; Culture</a></li>
+                        <li><a href="budget.html">Budget Tips</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Top Destinations</h4>
+                    <ul>
+                        <li><a href="city.html?city=goa">Goa, India</a></li>
+                        <li><a href="city.html?city=kashmir">Kashmir, India</a></li>
+                        <li><a href="city.html?city=dubai">Dubai, UAE</a></li>
+                        <li><a href="city.html?city=paris">Paris, France</a></li>
+                        <li><a href="city.html?city=bali">Bali, Indonesia</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope" style="margin-right:8px; color:var(--primary-orange);"></i>
+                            hello@wanderworld.com</li>
+                        <li><i class="fas fa-phone" style="margin-right:8px; color:var(--primary-orange);"></i> +91
+                            98765 43210</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 WanderWorld. All Rights Reserved. | Made with ❤️ for travelers</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top & Chatbot -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+    <button class="chatbot-btn" id="chatbotBtn" aria-label="Open chatbot"><i class="fas fa-comment-dots"></i></button>
+    <div class="chatbot-window" id="chatbotWindow">
+        <div class="chatbot-header">
+            <span>🤖 WanderBot</span>
+            <button class="close-chat" id="closeChat" aria-label="Close chat"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="chatbot-messages" id="chatMessages">
+            <div class="chat-msg bot">Hi! 👋 Looking for destination tips? Ask me anything!</div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatInput" placeholder="Type a message..." aria-label="Chat message">
+            <button id="chatSend" aria-label="Send message"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <div class="lightbox" id="lightbox">
+        <button class="close-lightbox" id="closeLightbox" aria-label="Close lightbox"><i
+                class="fas fa-times"></i></button>
+        <img src="" alt="Lightbox image" id="lightboxImg">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
